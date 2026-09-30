@@ -1,2 +1,2 @@
 Flask
-google-cloud-language
+huggingface_hub
