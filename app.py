@@ -4,7 +4,6 @@ from huggingface_hub import InferenceClient
 
 app = Flask(__name__)
 
-# Get API token from environment variable
 HF_TOKEN = os.environ.get("HF_TOKEN")
 
 client = InferenceClient(
@@ -39,7 +38,7 @@ def home():
 
             sentiment = "Error"
             score = None
-            print(e)
+            print("Error:", e)
 
     return render_template(
         "index.html",
@@ -50,4 +49,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
